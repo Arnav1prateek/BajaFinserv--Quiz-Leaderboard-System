@@ -51,11 +51,30 @@ public class QuizLeaderboardApp {
 
             SubmitResult submitResult = apiClient.submitLeaderboard(regNo, leaderboard);
             System.out.println("\nSubmission response:");
-            System.out.println("isCorrect: " + submitResult.isCorrect());
-            System.out.println("isIdempotent: " + submitResult.isIdempotent());
-            System.out.println("submittedTotal: " + submitResult.getSubmittedTotal());
-            System.out.println("expectedTotal: " + submitResult.getExpectedTotal());
-            System.out.println("message: " + submitResult.getMessage());
+            if (submitResult.isCorrect() != null) {
+                System.out.println("isCorrect: " + submitResult.isCorrect());
+            }
+            if (submitResult.isIdempotent() != null) {
+                System.out.println("isIdempotent: " + submitResult.isIdempotent());
+            }
+            if (submitResult.getSubmittedTotal() != null) {
+                System.out.println("submittedTotal: " + submitResult.getSubmittedTotal());
+            }
+            if (submitResult.getExpectedTotal() != null) {
+                System.out.println("expectedTotal: " + submitResult.getExpectedTotal());
+            }
+            if (submitResult.getMessage() != null) {
+                System.out.println("message: " + submitResult.getMessage());
+            }
+            if (submitResult.getRegNo() != null) {
+                System.out.println("regNo: " + submitResult.getRegNo());
+            }
+            if (submitResult.getTotalPollsMade() != null) {
+                System.out.println("totalPollsMade: " + submitResult.getTotalPollsMade());
+            }
+            if (submitResult.getAttemptCount() != null) {
+                System.out.println("attemptCount: " + submitResult.getAttemptCount());
+            }
         } catch (Exception e) {
             System.err.println("Execution failed: " + e.getMessage());
             e.printStackTrace();
